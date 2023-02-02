@@ -3,6 +3,8 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
+  const loginLink = `${process.env.NEXT_PUBLIC_ORY_URL}/oauth2/auth?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=openid+offline&state=uhcnljyxevztagvjklkfdaxu`;
+
   return (
     <div className={styles.container}>
       <Head>
@@ -21,7 +23,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a
-            href="https://zealous-bouman-mzrsnyv9e8.projects.oryapis.com/oauth2/auth?client_id=0f9f8fc9-6eec-46fb-8253-3bad2b0f3040&response_type=code&redirect_uri=http://127.0.0.1:3000/callback&scope=openid+offline&state=uhcnljyxevztagvjklkfdaxu"
+            href={loginLink}
             target="_blank"
             rel="noreferrer"
             className={styles.card}>
