@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const loginLink = `${process.env.NEXT_PUBLIC_ORY_URL}/oauth2/auth?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=openid+offline&state=uhcnljyxevztagvjklkfdaxu`;
+  const loginLink2 = `${process.env.NEXT_PUBLIC_ORY_URL}/oauth2/auth?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=http://127.0.0.1:3000/api/auth/callback&scope=openid+offline&state=uhcnljyxevztagvjklkfdaxu`;
 
   return (
     <div className={styles.container}>
@@ -31,12 +32,12 @@ export default function Home() {
             <p>Login to StormPlay</p>
           </a>
 
-          {/* <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href={loginLink2} className={styles.card}>
+            <h2>Login for test &rarr;</h2>
+            <p>for local test</p>
           </a>
 
-          <a
+          {/* <a
             href="https://github.com/vercel/next.js/tree/canary/examples"
             className={styles.card}>
             <h2>Examples &rarr;</h2>
