@@ -32,7 +32,11 @@ export default function Home() {
             <p>Login to StormPlay</p>
           </a>
 
-          <a href={loginLink2} className={styles.card}>
+          <a
+            href={loginLink2}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.card}>
             <h2>Login for test &rarr;</h2>
             <p>for local test</p>
           </a>
