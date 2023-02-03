@@ -23,20 +23,12 @@ export default function Home() {
         </p> */}
 
         <div className={styles.grid}>
-          <a
-            href={loginLink}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.card}>
+          <a href={loginLink} className={styles.card}>
             <h2>Login &rarr;</h2>
             <p>Login to StormPlay</p>
           </a>
 
-          <a
-            href={loginLink2}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.card}>
+          <a href={loginLink2} className={styles.card}>
             <h2>Login for test &rarr;</h2>
             <p>for local test</p>
           </a>
