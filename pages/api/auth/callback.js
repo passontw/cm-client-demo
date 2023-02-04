@@ -4,8 +4,8 @@ import { getCookie, setCookie } from 'cookies-next';
 export default async function handler(req, res) {
   console.log('hello from callback.js', req.url);
   const code = req.url.substring(
-    req.url.indexOf('code=') + 1,
-    req.url.indexOf('&'),
+    req.url.lastIndexOf('=') + 1,
+    // req.url.indexOf('&'),
   );
   // const { code } = req.body;
   console.log('code', code);
