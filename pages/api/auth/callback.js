@@ -63,6 +63,6 @@ export default async function handler(req, res) {
     });
   }
 
-  // return response;
+  return response;
   // return res.redirect(200, 'http://localhost:3000');
 }
