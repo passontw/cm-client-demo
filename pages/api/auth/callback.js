@@ -29,12 +29,13 @@ export default async function handler(req, res) {
     const data = await response.json();
     console.log('data', data);
     if (data.access_token && data.refresh_token) {
+      console.log('prepare to set cookies');
       setCookie('access_token', data.access_token, { req, res });
       setCookie('refresh_token', data.refresh_token, { req, res });
 
       // const a_token = getCookie('access_token', { req, res });
       // console.log('a_token', a_token);
-
+      console.log('cookies set');
       const userinfoResponse = await fetch(
         process.env.NEXT_PUBLIC_ORY_URL + '/userinfo',
         {
