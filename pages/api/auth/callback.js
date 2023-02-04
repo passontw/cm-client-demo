@@ -49,7 +49,7 @@ export default async function handler(req, res) {
       }
       // console.log(data2);
 
-      res.status(200).redirect(307, '/welcome');
+      // res.status(200).redirect(307, '/welcome');
       // return res.status(200).json({
       //   status: 200,
       //   data2,
