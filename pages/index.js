@@ -28,10 +28,10 @@ export default function Home() {
             <p>Login to StormPlay</p>
           </a>
 
-          {/* <a href={loginLink2} className={styles.card}>
+          <a href={loginLink2} className={styles.card}>
             <h2>Login for test &rarr;</h2>
             <p>for local test</p>
-          </a> */}
+          </a>
 
           {/* <a
             href="https://github.com/vercel/next.js/tree/canary/examples"
