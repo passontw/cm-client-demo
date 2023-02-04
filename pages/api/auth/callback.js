@@ -11,6 +11,7 @@ export default async function handler(req, res) {
   console.log('code', code);
   const clientID = process.env.NEXT_PUBLIC_CLIENT_ID;
   const clientSecret = process.env.ORY_CLIENT_SECRET;
+  const redirectUri = process.env.NEXT_PUBLIC_REDIRECT_URI;
 
   try {
     const params = new URLSearchParams();
@@ -18,7 +19,7 @@ export default async function handler(req, res) {
     params.append('client_id', clientID);
     params.append('client_secret', clientSecret);
     params.append('grant_type', 'authorization_code');
-    params.append('redirect_uri', 'http://127.0.0.1:3000/api/auth/callback');
+    params.append('redirect_uri', redirectUri);
 
     const response = await fetch(
       process.env.NEXT_PUBLIC_ORY_URL + '/oauth2/token',
