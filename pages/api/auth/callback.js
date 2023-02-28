@@ -10,15 +10,16 @@ export default async function handler(req, res) {
   // const { code } = req.body;
   console.log('code', code);
   const clientID = process.env.NEXT_PUBLIC_CLIENT_ID;
-  const clientSecret = process.env.ORY_CLIENT_SECRET;
+  const clientSecret = process.env.NEXT_ORY_CLIENT_SECRET;
   const redirectUri = process.env.NEXT_PUBLIC_REDIRECT_URI;
+  console.log("🚀 ~ file: callback.js:15 ~ handler ~ redirectUri:", redirectUri)
 
   try {
     const params = new URLSearchParams();
     params.append('code', code);
     params.append('client_id', clientID);
     params.append('client_secret', clientSecret);
-    params.append('grant_type', 'authorization_code');
+    params.append('grant_type', 'authorization code');
     params.append('redirect_uri', redirectUri);
 
     const response = await fetch(

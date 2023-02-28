@@ -3,8 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const loginLink = `${process.env.NEXT_PUBLIC_ORY_URL}/oauth2/auth?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=openid+offline&state=uhcnljyxevztagvjklkfdaxu`;
-  const loginLink2 = `${process.env.NEXT_PUBLIC_ORY_URL}/oauth2/auth?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=http://127.0.0.1:3000/api/auth/callback&scope=openid+offline&state=uhcnljyxevztagvjklkfdaxu`;
+  const loginLink = `${process.env.NEXT_PUBLIC_ORY_URL}/oauth2/auth?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=openid+offline_access&state=uhcnljyxevztagvjklkfdaxu`;
 
   return (
     <div className={styles.container}>
@@ -17,37 +16,11 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to StormPlay⚡</h1>
 
-        {/* <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p> */}
-
         <div className={styles.grid}>
           <a href={loginLink} className={styles.card}>
             <h2>Login &rarr;</h2>
             <p>Login to StormPlay</p>
           </a>
-
-          {/* <a href={loginLink2} className={styles.card}>
-            <h2>Login for test &rarr;</h2>
-            <p>for local test</p>
-          </a> */}
-
-          {/* <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}>
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}>
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a> */}
         </div>
       </main>
 
