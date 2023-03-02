@@ -3,11 +3,8 @@ import { getCookie, setCookie } from 'cookies-next';
 
 export default async function handler(req, res) {
   console.log('hello from callback.js', req.url);
-  const code = req.url.substring(
-    req.url.lastIndexOf('=') + 1,
-    // req.url.indexOf('&'),
-  );
-  // const { code } = req.body;
+  const { code } = req.query;
+
   console.log('code', code);
   const clientID = process.env.NEXT_PUBLIC_CLIENT_ID;
   const clientSecret = process.env.NEXT_ORY_CLIENT_SECRET;
@@ -19,7 +16,7 @@ export default async function handler(req, res) {
     params.append('code', code);
     params.append('client_id', clientID);
     params.append('client_secret', clientSecret);
-    params.append('grant_type', 'authorization code');
+    params.append('grant_type', 'authorization_code');
     params.append('redirect_uri', redirectUri);
 
     const response = await fetch(
