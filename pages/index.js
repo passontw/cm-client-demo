@@ -4,7 +4,10 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const loginLink = `${process.env.NEXT_PUBLIC_ORY_URL}/oauth2/auth?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=openid+offline&state=uhcnljyxevztagvjklkfdaxu`;
-
+  const logout = async () => {
+    await fetch(`/api/auth/logout`);
+    alert('清除 Cookie 完成');
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -21,6 +24,12 @@ export default function Home() {
             <h2>Login &rarr;</h2>
             <p>Login to StormPlay</p>
           </a>
+        </div>
+        <div className={styles.grid}>
+          <button className={styles.card} onClick={logout}>
+            <h2>Clear Cookie &rarr;</h2>
+            <p>Clear Cookie to StormPlay</p>
+          </button>
         </div>
       </main>
 

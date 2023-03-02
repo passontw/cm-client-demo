@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { getCookie, setCookie } from 'cookies-next';
+import { setCookie } from 'cookies-next';
 
 export default async function handler(req, res) {
   console.log('hello from callback.js', req.url);
