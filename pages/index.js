@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const loginLink = `${process.env.NEXT_PUBLIC_ORY_URL}/oauth2/auth?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=openid+offline_access&state=uhcnljyxevztagvjklkfdaxu`;
+  const loginLink = `${process.env.NEXT_PUBLIC_ORY_URL}/oauth2/auth?client_id=${process.env.NEXT_PUBLIC_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URI}&scope=openid+offline&state=uhcnljyxevztagvjklkfdaxu`;
 
   return (
     <div className={styles.container}>
